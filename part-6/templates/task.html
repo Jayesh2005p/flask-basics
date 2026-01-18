@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="task-detail-card">
+
+    <h2> Task Details</h2>
+
+    {% if task %}
+
+    <div class="detail-row">
+        <span class="label">Task ID</span>
+        <span class="value">{{ task.id }}</span>
+    </div>
+
+    <div class="detail-row">
+        <span class="label">Title</span>
+        <span class="value">{{ task.title | title }}</span>
+    </div>
+
+    <div class="detail-row">
+        <span class="label">Status</span>
+
+        {% set status = task.status | lower %}
+        {% if status == 'completed' %}
+        <span class="status-completed">{{ task.status | title }}</span>
+        {% elif status == 'in progress' %}
+        <span class="status-progress">{{ task.status | title }}</span>
+        {% else %}
+        <span class="status-pending">{{ task.status | title }}</span>
+        {% endif %}
+    </div>
+
+    <div class="detail-row">
+        <span class="label">Priority</span>
+        <span class="priority-badge">{{ task.priority | title }}</span>
+    </div>
+
+    {% else %}
+    <p class="not-found"> Task not found</p>
+    {% endif %}
+
+    <a href="{{ url_for('home') }}" class="back-btn"> Back to Home</a>
+
+</div>
+
+{% endblock %}

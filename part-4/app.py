@@ -54,10 +54,73 @@ def show_links():
         'post_2': url_for('show_post', post_id=2),
     }
     return render_template('links.html', links=links)
+@app.route('/products')
+def product_list():
+    products = {
+        1: {"name": "Laptop", "price": 50000, "category": "electronics"},
+        2: {"name": "Mobile", "price": 20000, "category": "electronics"},
+        3: {"name": "Shirt", "price": 1500, "category": "fashion"},
+        4: {"name": "Book", "price": 500, "category": "books"}
+    }
+
+    return render_template("product.html", products=products)
+
+@app.route('/product/<int:product_id>')
+def show_product(product_id):
+    products = {
+        1: {"name": "Laptop", "price": 50000},
+        2: {"name": "Mobile", "price": 20000},
+        3: {"name": "Shirt", "price": 1500},
+        4: {"name": "Book", "price": 500,}
+    }
+
+    product = products.get(product_id) 
+
+    return render_template("product.html", product=product, product_id=product_id)
+
+@app.route('/category/<category_name>/product/<int:product_id>')
+def category_product(category_name, product_id):
+
+    products = {
+        1: {"name": "Laptop", "price": 50000, "category": "electronics"},
+        2: {"name": "Mobile", "price": 20000, "category": "electronics"},
+        3: {"name": "Shirt", "price": 1500, "category": "fashion"},
+        4: {"name": "Book", "price": 500, "category": "books"}
+    }
+
+    product = products.get(product_id)
+
+    if product and product["category"] == category_name:
+        return render_template(
+            "category_product.html",
+            product=product,
+            category_name=category_name,
+            product_id=product_id
+        )
+    else:
+        return render_template(
+    "error.html",
+    message="Product not found in this category"
+)
+
+@app.route('/search/<query>')
+def search(query):
+    return render_template("search.html", query=query)
+
+    
+
+    
+
+
+
+
+
+   
+
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=500)
 
 
 # =============================================================================

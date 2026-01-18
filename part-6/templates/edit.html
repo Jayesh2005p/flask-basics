@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="task-detail-card">
+    <h2>Edit Task</h2>
+
+    <form method="POST">
+
+        <label>Title</label>
+        <input type="text" name="title" value="{{ task.title }}" required>
+
+        <label>Status</label>
+        <select name="status">
+            <option {{ 'selected' if task.status|lower=='pending' }}>Pending</option>
+            <option {{ 'selected' if task.status|lower=='in progress' }}>In Progress</option>
+            <option {{ 'selected' if task.status|lower=='completed' }}>Completed</option>
+        </select>
+
+        <label>Priority</label>
+        <select name="priority">
+            <option {{ 'selected' if task.priority|lower=='low' }}>Low</option>
+            <option {{ 'selected' if task.priority|lower=='medium' }}>Medium</option>
+            <option {{ 'selected' if task.priority|lower=='high' }}>High</option>
+        </select>
+
+        <button type="submit" class="edit-btn">Update Task</button>
+        <a href="{{ url_for('home') }}" class="back-btn">Cancel</a>
+
+    </form>
+</div>
+
+{% endblock %}

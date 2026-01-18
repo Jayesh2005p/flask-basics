@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>About This App</h2>
+
+<p>
+    This is a simple <strong>Flask To-Do List application</strong> built to practice
+    backend fundamentals using Python and Flask.
+</p>
+
+<h3>What this app demonstrates:</h3>
+
+<ul>
+    <li>Flask routing</li>
+    <li>Dynamic URLs</li>
+    <li>Jinja2 templates</li>
+    <li>Template inheritance</li>
+    <li>Form handling (GET & POST)</li>
+</ul>
+
+
+
+<a href="{{ url_for('home') }}"> Back to Home</a>
+
+{% endblock %}

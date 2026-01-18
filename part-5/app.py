@@ -18,20 +18,20 @@ app = Flask(__name__)
 # =============================================================================
 
 PERSONAL_INFO = {
-    'name': 'Your Name',
+    'name': 'Jayesh Patil',
     'title': 'Web Developer',
     'bio': 'A passionate developer learning Flask and web development.',
-    'email': 'your.email@example.com',
-    'github': 'https://github.com/yourusername',
-    'linkedin': 'https://linkedin.com/in/yourusername',
+    'email': 'jayeshrp6816@gmail.com',
+    'github': 'https://github.com/Jayesh2005p',
+    'linkedin': 'https://www.linkedin.com/in/jayesh-patil-27400437',
 }
 
 SKILLS = [
     {'name': 'Python', 'level': 80},
-    {'name': 'HTML/CSS', 'level': 75},
+    {'name': 'HTML/CSS', 'level': 90},
     {'name': 'Flask', 'level': 60},
     {'name': 'JavaScript', 'level': 50},
-    {'name': 'SQL', 'level': 45},
+    {'name': 'SQL', 'level': 70},
 ]
 
 PROJECTS = [
@@ -76,7 +76,7 @@ def contact():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=8080)
 
 
 # =============================================================================

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/products">Products</a>
+            <a href="/search-form">Search</a>
+            <a href="/links">URL Builder</a>
+        </nav>
+
+        {% if product %}
+        <div class="card">
+            <h1>{{ product["name"] }}</h1>
+            <p><strong>Category:</strong> {{ category_name }}</p>
+            <p><strong>Price:</strong> ₹{{ product["price"] }}</p>
+            <p><strong>Product ID:</strong> {{ product_id }}</p>
+
+            <a href="/products">← Back to Products</a>
+        </div>
+        {% else %}
+        <div class="card">
+            <h1>Product Not Found</h1>
+            <p>This product does not exist in this category.</p>
+            <a href="/products">← Back to Products</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

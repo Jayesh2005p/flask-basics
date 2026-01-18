@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+nav {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: #edf2f7;
+    border-radius: 8px;
+}
+
+nav a {
+    margin-right: 15px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2b6cb0;
+}
+.route-demo,
+.info-box,
+.try-it,
+.not-found,
+.post-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.route-demo,
+.info-box,
+.try-it,
+.not-found,
+.post-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+a {
+    text-decoration: none;
+}
+
+.route-demo a,
+.card a,
+button {
+    display: inline-block;
+    margin: 5px 8px 5px 0;
+    padding: 8px 16px;
+    background: #4299e1;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.route-demo a:hover,
+.card a:hover,
+button:hover {
+    background: #3182ce;
+}
+input {
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4299e1;
+}
+h1,
+h2,
+h3 {
+    color: #2d3748;
+}
